@@ -1,0 +1,1 @@
+{"version":3,"file":"basic-charts.module.js","sourceRoot":"","sources":["basic-charts.module.ts"],"names":[],"mappings":";;;;;;;AAAA,sCAA8C;AAE9C,6EAAyE;AAMzE,IAAa,iBAAiB;IAA9B;IAAiC,CAAC;IAAD,wBAAC;AAAD,CAAC,AAAlC,IAAkC;AAArB,iBAAiB;IAJ7B,eAAQ,CAAC;QACR,OAAO,EAAO,CAAE,sDAAwB,CAAE;QAC1C,YAAY,EAAE,CAAE,sDAAwB,CAAC,UAAU,CAAE;KACtD,CAAC;GACW,iBAAiB,CAAI;AAArB,8CAAiB"}

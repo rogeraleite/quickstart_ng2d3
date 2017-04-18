@@ -1,0 +1,19 @@
+<main class="container">
+<nav class="navbar navbar-inner navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            
+            <a class="navbar-brand" routerLink="/home">
+                <span class="app-title">D3 QuickStart</span>
+            </a>
+            <span class="navbar-collapse" [attr.data-collapse]="isCollapsed">
+                <ul class="nav navbar-nav nav-pills navBarPadding">
+                    <li routerLinkActive="active"><a routerLink="/basic-charts">Basic Charts</a></li>
+                    <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+</main>

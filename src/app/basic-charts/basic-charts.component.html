@@ -1,0 +1,28 @@
+
+<div class="orders view">
+    <div class="container">
+        <header>
+            <h3><span class="glyphicon glyphicon-share"></span>&nbsp;&nbsp;Basic Charts</h3>
+        </header>
+        <br />
+        <div class="navbar">
+            <ul class="nav navbar-nav">
+                <li class="toolbar-item">
+                    <a routerLink="line-chart" routerLinkActive="active">
+                       <span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;Line Chart
+                    </a>
+                </li>
+                <li class="toolbar-item">
+                    <a routerLink="force-directed-graph" routerLinkActive="active">
+                        <span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;Force Directed Graph
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <router-outlet></router-outlet>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
