@@ -27,7 +27,7 @@ var LineChartComponent = (function () {
         this.drawLine();
     };
     LineChartComponent.prototype.initSvg = function () {
-        this.svg = d3.select('svg')
+        this.svg = d3.select('#cm-linechart svg')
             .append('g')
             .attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
         ;

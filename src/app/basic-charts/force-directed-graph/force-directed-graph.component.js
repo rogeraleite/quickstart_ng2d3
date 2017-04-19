@@ -22,7 +22,7 @@ var ForceDirectedGraphComponent = (function () {
     }
     ForceDirectedGraphComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.svg = d3.select('svg');
+        this.svg = d3.select('#cm-force-directed-graph svg');
         this.color = d3.scaleOrdinal(d3.schemeCategory20);
         d3.json("../app/shared/miserables.json")
             .get(function (error, graph) {

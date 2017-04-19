@@ -12,6 +12,8 @@ import * as d3 from 'd3';
 )
 export class ForceDirectedGraphComponent implements OnInit {
 
+    //@Input() id: string;
+
     private svg: any;
     private width: any;
     private height: any;
@@ -28,7 +30,7 @@ export class ForceDirectedGraphComponent implements OnInit {
             .force("center", d3.forceCenter(this.width / 2, this.height / 2));
     }
     ngOnInit(): void {
-        this.svg = d3.select('svg');
+        this.svg = d3.select('#cm-force-directed-graph svg');
         this.color = d3.scaleOrdinal(d3.schemeCategory20);
         d3.json("../app/shared/miserables.json")
             .get((error: any, graph: any) => {
