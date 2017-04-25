@@ -7,6 +7,8 @@ import * as d3 from 'd3';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
+
+
     ngOnInit(): void {
     }
 }

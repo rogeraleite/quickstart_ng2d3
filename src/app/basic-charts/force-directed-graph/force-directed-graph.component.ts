@@ -21,7 +21,6 @@ export class ForceDirectedGraphComponent implements OnInit {
     public simulation: any;
 
     constructor(route: ActivatedRoute) {
-
         this.width = + 900;
         this.height = + 600;
         this.simulation = d3.forceSimulation()

@@ -11,6 +11,7 @@ var basic_charts_component_1 = require("./basic-charts.component");
 var line_chart_component_1 = require("./line-chart/line-chart.component");
 var force_directed_graph_component_1 = require("./force-directed-graph/force-directed-graph.component");
 var bubble_chart_component_1 = require("./bubble-chart/bubble-chart.component");
+var parallel_coordinates_component_1 = require("./parallel-coordinates/parallel-coordinates.component");
 var routes = [
     {
         path: '',
@@ -18,7 +19,8 @@ var routes = [
         children: [
             { path: 'line-chart', component: line_chart_component_1.LineChartComponent },
             { path: 'force-directed-graph', component: force_directed_graph_component_1.ForceDirectedGraphComponent },
-            { path: 'bubble-chart', component: bubble_chart_component_1.BubbleChartComponent }
+            { path: 'bubble-chart', component: bubble_chart_component_1.BubbleChartComponent },
+            { path: 'parallel-coordinates', component: parallel_coordinates_component_1.ParallelCoordinatesComponent }
         ]
     }
 ];
@@ -28,7 +30,7 @@ var BasicChartsRoutingModule = (function () {
     return BasicChartsRoutingModule;
 }());
 BasicChartsRoutingModule.components = [basic_charts_component_1.BasicChartsComponent, line_chart_component_1.LineChartComponent,
-    force_directed_graph_component_1.ForceDirectedGraphComponent, bubble_chart_component_1.BubbleChartComponent];
+    force_directed_graph_component_1.ForceDirectedGraphComponent, bubble_chart_component_1.BubbleChartComponent, parallel_coordinates_component_1.ParallelCoordinatesComponent];
 BasicChartsRoutingModule = __decorate([
     core_1.NgModule({
         imports: [router_1.RouterModule.forChild(routes)],

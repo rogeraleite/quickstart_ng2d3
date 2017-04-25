@@ -8,6 +8,7 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://syntagmatic.github.io/parallel-coordinates/d3.parcoords.css">
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -15,6 +16,16 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+
+    <!-- jQuery and chosen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://people.ischool.berkeley.edu/~dmenghani/wine-viz_bkp/d3.parcoords.js"></script>
+    
+    <script src="node_modules/d3.parcoords.js/d3.parcoords.js"></script>
+    
     <script src="systemjs.config.js"></script>
     <script>
       System.import('main.js').catch(function(err){ console.error(err); });

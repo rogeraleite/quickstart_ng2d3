@@ -1,16 +1,22 @@
 import {Component, OnInit} from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
+
+import {CarsService} from '../../services/cars.service';
+import {Cars} from '../../shared/cars';
+
 
 import * as d3 from 'd3';
 
 import { Stocks } from '../../shared/data';
-
+ 
 @Component({
     moduleId: module.id,
     selector: 'cm-linechart',
-    templateUrl: 'line-chart.component.html'
+    templateUrl: 'line-chart.component.html',
+    providers: [CarsService]
 })
 export class LineChartComponent implements OnInit {
+
     private margin = {top: 20, right: 20, bottom: 30, left: 50};
     private width: number;
     private height: number;
@@ -19,12 +25,17 @@ export class LineChartComponent implements OnInit {
     private svg: any;
     private line: d3.Line<[number, number]>;
 
-    constructor(private router: Router, private route: ActivatedRoute) {
-      this.width = 900 - this.margin.left - this.margin.right ;
+    public cars: Cars[];
+
+    constructor(private router: Router, private route: ActivatedRoute, private _carsService: CarsService) {
+      this.width = 900 - this.margin.left - this.margin.right;
       this.height = 500 - this.margin.top - this.margin.bottom;
+
     }
 
     ngOnInit() {
+      this.getCars();
+
       this.initSvg();
       this.initAxis();
       this.drawAxis();
@@ -65,8 +76,8 @@ export class LineChartComponent implements OnInit {
 
     private drawLine() {
       this.line = d3.line()
-                         .x( (d: any) => this.x(d.date) )
-                         .y( (d: any) => this.y(d.value) );
+                    .x( (d: any) => this.x(d.date) )
+                    .y( (d: any) => this.y(d.value) );
 
       this.svg.append('path')
               .datum(Stocks)
@@ -76,5 +87,9 @@ export class LineChartComponent implements OnInit {
               .attr('stroke-linecap', 'round')
               .attr('stroke-width', 1.5)
               .attr('d', this.line);
+    }
+
+    getCars(){
+      this._carsService.getCars().then((cars: Cars[]) => this.cars = cars);
     }
 }
