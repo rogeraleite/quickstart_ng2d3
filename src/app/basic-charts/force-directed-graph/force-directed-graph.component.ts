@@ -60,16 +60,16 @@ export class ForceDirectedGraphComponent implements OnInit {
                     .attr("r", 5)
                     .attr("fill", (d: any) => this.color(d.group))
                     .call(d3.drag()
-                        .on("start", (d: any) => {
-                                        if (!d3.event.active) 
-                                            this.simulation.alphaTarget(0.3).restart();
-                                        d.fx = d.x, d.fy = d.y;
-                        })
-                        .on("drag", this.dragged)
-                        .on("end", (d: any) => {
-                            if (!d3.event.active) this.simulation.alphaTarget(0);
-                            d.fx = null, d.fy = null;
-                        }));
+                            .on("start", (d: any) => {
+                                            if (!d3.event.active) 
+                                                this.simulation.alphaTarget(0.3).restart();
+                                            d.fx = d.x, d.fy = d.y;
+                            })
+                            .on("drag", this.dragged)
+                            .on("end", (d: any) => {
+                                if (!d3.event.active) this.simulation.alphaTarget(0);
+                                d.fx = null, d.fy = null;
+                            }));
 
                 node.append("title")
                     .text((d: any) => d.id);

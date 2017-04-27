@@ -11,7 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var cars_service_1 = require("../../services/cars.service");
+var cars_1 = require("../../shared/cars");
 require("../../../../node_modules/d3.parcoords.js/d3.parcoords.js");
+var d3 = require("d3");
 // D3 Example
 // https://bl.ocks.org/mbostock/22994cc97fefaeede0d861e6815a847e
 // *observe how some d3 calls were also updated
@@ -22,13 +24,6 @@ var ParallelCoordinatesComponent = (function () {
         this.route = route;
         this._carsService = _carsService;
         this.margin = { top: 20, right: 20, bottom: 30, left: 50 };
-        this.temp_data = [
-            [0, -0, 0, 0, 0, 3],
-            [1, -1, 1, 2, 1, 6],
-            [2, -2, 4, 4, 0.5, 2],
-            [3, -3, 9, 6, 0.33, 4],
-            [4, -4, 16, 8, 0.25, 9]
-        ];
         this.width = 960 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.top - this.margin.bottom;
         this.y = [];
@@ -36,7 +31,9 @@ var ParallelCoordinatesComponent = (function () {
     ParallelCoordinatesComponent.prototype.ngOnInit = function () {
         this.getCars();
         this.createPCFunction();
-        this.temp_pc();
+        this.pc_construction();
+        this.setupParCoordBehavior();
+        this.style_fix();
     };
     ParallelCoordinatesComponent.prototype.getCars = function () {
         var _this = this;
@@ -47,11 +44,53 @@ var ParallelCoordinatesComponent = (function () {
         //http://stackoverflow.com/questions/37081943/angular2-import-external-js-file-into-component
         new parcoords(); //parcoords is a function in d3.parcoods.js (originally: d3.parcoords)
     };
-    ParallelCoordinatesComponent.prototype.temp_pc = function () {
-        parcoords()("#cm-parallelcoordinates")
-            .data(this.temp_data)
+    ParallelCoordinatesComponent.prototype.pc_construction = function () {
+        /*
+          this.blue_to_red = d3.scaleQuantize()
+                                 .domain([0, 50])
+                                 //.interpolate(d3.interpolateRgb(d3.color("blue"), d3.color("red")))
+                                 .range([d3.color("blue"), d3.color("red")]);
+                                 //.interpolator(['red', 'blue'])
+                                 //.interpolateRgb(d3.color("blue"), d3.color("red"));
+                                 //.interpolate(d3.interpolateLab);
+        */
+        this.teste = "banana";
+        this.pc = parcoords()("#cm-parallelcoordinates")
+            .data(cars_1.Cars)
+            .hideAxis(["name"])
+            .smoothness(0)
+            .showControlPoints(false)
+            .color(function (d) { return d3.color("blue"); }) // quantitative color scale
+            .alpha(0.35)
             .render()
-            .createAxes();
+            .brushMode("1D-axes") // enable brushing
+            .interactive(); // command line mode
+    };
+    ParallelCoordinatesComponent.prototype.setupParCoordBehavior = function () {
+        //position bug: fix
+        /*
+        var panel_deviation = [-10,20];
+        var mouse_deviation = [8,10];
+        $("#pcscores svg g")[0].setAttribute('transform','translate('+panel_deviation[0]+','+panel_deviation[1]+')');
+        */
+        //s.resetPC();
+        //add hover event
+        var svg = d3.select("#cm-parallelcoordinates svg");
+        svg.on('mouseup', function () {
+            //$("canvas").addClass( "faded" );
+            if (parcoords()("#cm-parallelcoordinates").brushed()) {
+                console.log("aaaaa");
+            }
+            else {
+                console.log("bbbb");
+            }
+        });
+        //console.log(this.pc());
+        //debugger;
+    };
+    ParallelCoordinatesComponent.prototype.style_fix = function () {
+        $("g.brush").css({ fill: "#CCC", opacity: 0.4 });
+        //$("g.brush").css("opacity", "0.5"); 
     };
     return ParallelCoordinatesComponent;
 }());
