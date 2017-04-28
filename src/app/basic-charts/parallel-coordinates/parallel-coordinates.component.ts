@@ -89,7 +89,7 @@ export class ParallelCoordinatesComponent implements OnInit {
                 .alpha(0.35)
                 .render()
                 .brushMode("1D-axes")  // enable brushing
-                //.reorderable()
+                .reorderable()
                 .interactive();  // command line mode
 
     }
@@ -110,13 +110,13 @@ export class ParallelCoordinatesComponent implements OnInit {
 
                 //$("canvas").addClass( "faded" );
                 
-                if(parcoords()("#cm-parallelcoordinates").brushed()){
-                  console.log("aaaaa");  
-                }
-                else{console.log("bbbb");}
+                // if(parcoords()("#cm-parallelcoordinates").brushed()){
+                //   console.log("aaaaa");  
+                // }
+                // else{console.log("bbbbb");}
               });
             //console.log(this.pc());
-            //debugger;
+            //debugger; 
     }
 
     private style_fix(){

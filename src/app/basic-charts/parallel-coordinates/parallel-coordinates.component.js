@@ -64,6 +64,7 @@ var ParallelCoordinatesComponent = (function () {
             .alpha(0.35)
             .render()
             .brushMode("1D-axes") // enable brushing
+            .reorderable()
             .interactive(); // command line mode
     };
     ParallelCoordinatesComponent.prototype.setupParCoordBehavior = function () {
@@ -78,15 +79,13 @@ var ParallelCoordinatesComponent = (function () {
         var svg = d3.select("#cm-parallelcoordinates svg");
         svg.on('mouseup', function () {
             //$("canvas").addClass( "faded" );
-            if (parcoords()("#cm-parallelcoordinates").brushed()) {
-                console.log("aaaaa");
-            }
-            else {
-                console.log("bbbb");
-            }
+            // if(parcoords()("#cm-parallelcoordinates").brushed()){
+            //   console.log("aaaaa");  
+            // }
+            // else{console.log("bbbbb");}
         });
         //console.log(this.pc());
-        //debugger;
+        //debugger; 
     };
     ParallelCoordinatesComponent.prototype.style_fix = function () {
         $("g.brush").css({ fill: "#CCC", opacity: 0.4 });
