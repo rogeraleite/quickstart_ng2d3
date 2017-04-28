@@ -77,7 +77,6 @@ export class ParallelCoordinatesComponent implements OnInit {
                                //.interpolateRgb(d3.color("blue"), d3.color("red"));
                                //.interpolate(d3.interpolateLab);
       */ 
-        this.teste = "banana";
         this.pc = parcoords()("#cm-parallelcoordinates")
                 .data(Cars)
                 .hideAxis(["name"])
@@ -120,7 +119,8 @@ export class ParallelCoordinatesComponent implements OnInit {
     }
 
     private style_fix(){
-      $("g.brush").css({ fill: "#CCC", opacity: 0.4}); 
+      $("g.brush").css({ fill: "#CCC", opacity: 0.3}); 
+      $("g > rect.extent").css({ fill: "#ff0000" });
       //$("g.brush").css("opacity", "0.5"); 
     }
 
