@@ -1,9 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
 
-import {CarsService} from '../../services/cars.service';
-import {Cars} from '../../shared/cars';
-
 
 import * as d3 from 'd3';
 
@@ -12,8 +9,7 @@ import { Stocks } from '../../shared/data';
 @Component({
     moduleId: module.id,
     selector: 'cm-linechart',
-    templateUrl: 'line-chart.component.html',
-    providers: [CarsService]
+    templateUrl: 'line-chart.component.html'
 })
 export class LineChartComponent implements OnInit {
 
@@ -25,17 +21,12 @@ export class LineChartComponent implements OnInit {
     private svg: any;
     private line: d3.Line<[number, number]>;
 
-    public cars: Cars[];
-
-    constructor(private router: Router, private route: ActivatedRoute, private _carsService: CarsService) {
+    constructor(private router: Router, private route: ActivatedRoute) {
       this.width = 900 - this.margin.left - this.margin.right;
       this.height = 500 - this.margin.top - this.margin.bottom;
-
     }
 
     ngOnInit() {
-      this.getCars();
-
       this.initSvg();
       this.initAxis();
       this.drawAxis();
@@ -89,7 +80,4 @@ export class LineChartComponent implements OnInit {
               .attr('d', this.line);
     }
 
-    getCars(){
-      this._carsService.getCars().then((cars: Cars[]) => this.cars = cars);
-    }
 }

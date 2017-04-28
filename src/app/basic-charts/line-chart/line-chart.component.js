@@ -10,20 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var cars_service_1 = require("../../services/cars.service");
 var d3 = require("d3");
 var data_1 = require("../../shared/data");
 var LineChartComponent = (function () {
-    function LineChartComponent(router, route, _carsService) {
+    function LineChartComponent(router, route) {
         this.router = router;
         this.route = route;
-        this._carsService = _carsService;
         this.margin = { top: 20, right: 20, bottom: 30, left: 50 };
         this.width = 900 - this.margin.left - this.margin.right;
         this.height = 500 - this.margin.top - this.margin.bottom;
     }
     LineChartComponent.prototype.ngOnInit = function () {
-        this.getCars();
         this.initSvg();
         this.initAxis();
         this.drawAxis();
@@ -71,20 +68,15 @@ var LineChartComponent = (function () {
             .attr('stroke-width', 1.5)
             .attr('d', this.line);
     };
-    LineChartComponent.prototype.getCars = function () {
-        var _this = this;
-        this._carsService.getCars().then(function (cars) { return _this.cars = cars; });
-    };
     return LineChartComponent;
 }());
 LineChartComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'cm-linechart',
-        templateUrl: 'line-chart.component.html',
-        providers: [cars_service_1.CarsService]
+        templateUrl: 'line-chart.component.html'
     }),
-    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute, cars_service_1.CarsService])
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
 ], LineChartComponent);
 exports.LineChartComponent = LineChartComponent;
 //# sourceMappingURL=line-chart.component.js.map
