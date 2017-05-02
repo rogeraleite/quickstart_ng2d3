@@ -5,8 +5,7 @@ import {CarsService} from '../../services/cars.service';
 import {Cars} from '../../shared/cars';
 
 declare var parcoords: any;
-
-import '../../../../node_modules/d3.parcoords.js/d3.parcoords.js';
+import '../../../../node_modules/d3.parcoords.js/d3.parcoords.js';//important also to import in index.html
 
 import * as d3 from 'd3';
 declare var $: any;

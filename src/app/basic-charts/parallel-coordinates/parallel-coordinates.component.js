@@ -12,7 +12,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var cars_service_1 = require("../../services/cars.service");
 var cars_1 = require("../../shared/cars");
-require("../../../../node_modules/d3.parcoords.js/d3.parcoords.js");
+require("../../../../node_modules/d3.parcoords.js/d3.parcoords.js"); //important also to import in index.html
 var d3 = require("d3");
 // D3 Example
 // https://bl.ocks.org/mbostock/22994cc97fefaeede0d861e6815a847e

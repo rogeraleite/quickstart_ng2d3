@@ -6,6 +6,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { ForceDirectedGraphComponent } from './force-directed-graph/force-directed-graph.component';
 import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
 import { ParallelCoordinatesComponent } from './parallel-coordinates/parallel-coordinates.component';
+import { DcGraphsComponent } from './dc-graphs/dc-graphs.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: 'line-chart',  component: LineChartComponent},
       { path: 'force-directed-graph',  component: ForceDirectedGraphComponent },
       { path: 'bubble-chart',  component: BubbleChartComponent },
-      { path: 'parallel-coordinates',  component: ParallelCoordinatesComponent }
+      { path: 'parallel-coordinates',  component: ParallelCoordinatesComponent },
+      { path: 'dc-graphs',  component: DcGraphsComponent }
     ]
   }
 ];
@@ -26,5 +28,6 @@ const routes: Routes = [
 })
 export class BasicChartsRoutingModule {
   static components = [ BasicChartsComponent, LineChartComponent,
-  ForceDirectedGraphComponent, BubbleChartComponent, ParallelCoordinatesComponent ];
+  ForceDirectedGraphComponent, BubbleChartComponent, ParallelCoordinatesComponent,
+  DcGraphsComponent ];
 }

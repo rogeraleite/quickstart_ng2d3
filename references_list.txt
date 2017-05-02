@@ -1,0 +1,2 @@
+ng2+dv3: http://krispo.github.io/ng2-nvd3/
+parallelcoord + table: http://bl.ocks.org/eesur/1a2514440351ec22f176
