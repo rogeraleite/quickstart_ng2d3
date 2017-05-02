@@ -1,6 +1,5 @@
 import {Component, OnInit, enableProdMode } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-//import {CrossFilter} from '../../../../node_modules/retyped-crossfilter-tsd-ambient/crossfilter.d';
 
 /// <reference path="../../../../node_modules/@types/crossfilter/index.d.ts" />
 /// <reference path="../../../../node_modules/@types/dc/index.d.ts" />
@@ -9,13 +8,6 @@ import * as d3 from 'd3';
 
 declare var $: any;
 declare var dc: any;
-//import '../../../../node_modules/crossfilter/crossfilter.js';//important also to import in index.html
-//import '../../../../node_modules/dc/dc.js';//important also to import in index.html
-interface Spend {
-    name: string;
-    spent: number;
-    year: number;
-}
 
 @Component({
     moduleId: module.id,
@@ -63,17 +55,9 @@ export class DcGraphsComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.createPCFunction();
-
       this.dim_and_group_construction();
       this.graphs_construction();
       this.style_fix();
-    }
-
-    private createPCFunction(){
-      //this solution to manage other library comes from:
-      //http://stackoverflow.com/questions/37081943/angular2-import-external-js-file-into-component
-      //new dc(); //parcoords is a var in dc.js
     }
 
     private dim_and_group_construction(){

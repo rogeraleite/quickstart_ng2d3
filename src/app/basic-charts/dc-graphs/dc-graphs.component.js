@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-//import {CrossFilter} from '../../../../node_modules/retyped-crossfilter-tsd-ambient/crossfilter.d';
 /// <reference path="../../../../node_modules/@types/crossfilter/index.d.ts" />
 /// <reference path="../../../../node_modules/@types/dc/index.d.ts" />
 var d3 = require("d3");
@@ -33,15 +32,9 @@ var DcGraphsComponent = (function () {
         this.y = [];
     }
     DcGraphsComponent.prototype.ngOnInit = function () {
-        this.createPCFunction();
         this.dim_and_group_construction();
         this.graphs_construction();
         this.style_fix();
-    };
-    DcGraphsComponent.prototype.createPCFunction = function () {
-        //this solution to manage other library comes from:
-        //http://stackoverflow.com/questions/37081943/angular2-import-external-js-file-into-component
-        //new dc(); //parcoords is a var in dc.js
     };
     DcGraphsComponent.prototype.dim_and_group_construction = function () {
         this.ndx = crossfilter(this.spendData);
