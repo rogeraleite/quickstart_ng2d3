@@ -12,7 +12,4 @@ Implement some charts with D3 and Angular 2+
 <li>Go to http://localhost:3000 in your browser</li>
 </ul>
 
-#Screenshots
-<a href="/src/images/screenshots/charts.png" target="_blank">
-<img width="500" src="/src/images/screenshots/charts.png" border="0" style="max-width:100%;">
-</a>
+

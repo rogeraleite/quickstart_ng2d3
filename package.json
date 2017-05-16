@@ -32,6 +32,7 @@
     "@angular/platform-browser": "~4.0.0",
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
+    "@types/d3": "^4.5.0",
     "@types/crossfilter": "0.0.30",
     "@types/dc": "0.0.23",
     "angular-in-memory-web-api": "~0.3.0",
@@ -43,7 +44,6 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@types/d3": "^4.5.0",
     "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.46",
     "angular2-csv": "^0.2.1",
